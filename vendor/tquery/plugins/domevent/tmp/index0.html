@@ -1,0 +1,20 @@
+<!doctype html><title>Minimal tQuery Page</title>
+<script src="../../../build/tquery-bundle.js"></script>
+
+<script src="../threex.domevent.js"></script>
+<script src="../tquery.object3d.domevent0.js"></script>
+<body><script>
+	var world	= tQuery.createWorld().boilerplate().start();
+	var cube	= tQuery.createCube().addTo(world);
+
+	tQuery('cube').on('mouseover', function(event){
+		console.log(event.type, "on cube", event)
+	});
+	
+	tQuery('cube').on('click', function(event){
+		console.log("click on cube", event)
+	});
+	tQuery(world.tScene()).on('click', function(event){
+		console.log("click on scene", event);
+	});
+</script></body>
